@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Task</title>
+</head>
+<body style="padding: 16px">
+<center><h1>Add new task</h1></center>
+<form action="{% url "addTask" %}"method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Task title" name="title" required><br>
+    <textarea style="margin-top: 8px" placeholder="Task description" name="description" required></textarea><br>
+    <button>Add task</button>
+</form>
+
+</body>
+</html>

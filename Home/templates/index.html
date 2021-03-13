@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<center><h1>Hello {{name}} </h1></center>
+    <div>
+    <form action="{% url "index" %}" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Task" name="task">
+    <button type="submit">Add task</button>
+</form>
+    <ul>{% for task in tasks %}
+        <li>
+            {{ task }}
+         <form action="{% url "delete" %}"method="post">
+             {% csrf_token %}
+         <input type="hidden" style="display: inline-block" name="task" value={{task}} />
+             <button type="submit">Delete</button>
+        </form>
+        </li>
+        {% empty %}
+        <h3>Empty tasks list</h3>
+        {% endfor %}
+    </ul>
+    </div>
+</body>
+</html>

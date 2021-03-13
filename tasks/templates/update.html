@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+<center><h1>Add new task</h1></center>
+<form action="{% url "update" task.id %}"method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Task title" name="title" required value="{{ task.title }}"><br>
+    <textarea style="margin-top: 8px" placeholder="Task description" name="description"  required>{{ task.description }}</textarea><br>
+    <button>Add task</button>
+</form>
+</body>
+</html>
