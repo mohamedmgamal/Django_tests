@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\movies\models.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\tasks\models.py">
           <value>
             <Attribute>

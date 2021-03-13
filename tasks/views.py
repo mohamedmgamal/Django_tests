@@ -6,7 +6,8 @@ def empty(request):
     return HttpResponse("empty page")
 def viewAll(request):
     tasks=Task.objects.all()
-    return render(request,"index.html",{
+    print(tasks)
+    return render(request,"showAll.html",{
         'tasks':tasks
     })
 def delete(request,id):
