@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New Movie</title>
+    <title>Edit Movie</title>
 </head>
 <body>
 <form action="{% url "addMovie" %}" method="post" enctype="multipart/form-data">
                {% csrf_token %}
     {{  form.as_p  }}
-<button type="submit">Add New Movie</button>
+<button type="submit">Edit Movie</button>
 </form>
 
 </body>

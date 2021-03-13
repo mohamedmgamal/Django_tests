@@ -15,3 +15,14 @@ def addMovie(request):
     return render(request,"addMovie.html",{
         'form':form
     })
+def edit(request,id):
+        form = MovieForm(request.POST or None, request.FILES or None,instance=Movies.objects.get(pk=id))
+        if form.is_valid():
+            form.save()
+            return redirect("viewAll")
+        return render(request, "editMovie.html", {
+            'form': form
+        })
+def delete(request,id):
+    Movies.objects.get(pk=id).delete()
+    return redirect("viewAll")
