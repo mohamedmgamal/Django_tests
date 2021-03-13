@@ -7,17 +7,17 @@ def empty(request):
 def viewAll(request):
     tasks=Task.objects.all()
     print(tasks)
-    return render(request,"showAll.html",{
+    return render(request,"showAllTasks.html",{
         'tasks':tasks
     })
 def delete(request,id):
     Task.objects.get(pk=id).delete()
-    return redirect('viewAll')
+    return redirect('viewAllTasks')
 def addTask(request):
     if request.method=="POST":
         task=Task(title=request.POST["title"],description=request.POST["description"])
         task.save()
-        return redirect('viewAll')
+        return redirect('viewAllTasks')
     return render(request,'addTask.html')
 def update(request,id):
     task=Task.objects.get(pk=id)
@@ -25,7 +25,7 @@ def update(request,id):
         task.title=request.POST["title"]
         task.description=request.POST["description"]
         task.save()
-        return redirect('viewAll')
+        return redirect('viewAllTasks')
     return render(request,'update.html',{
         "task":task
     })

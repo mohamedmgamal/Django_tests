@@ -10,7 +10,7 @@
     {% csrf_token %}
     <input type="text" placeholder="Task title" name="title" required value="{{ task.title }}"><br>
     <textarea style="margin-top: 8px" placeholder="Task description" name="description"  required>{{ task.description }}</textarea><br>
-    <button>Add task</button>
+    <button>Update task</button>
 </form>
 </body>
 </html>
