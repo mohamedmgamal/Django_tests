@@ -27,6 +27,7 @@ def edit(request,id):
             return redirect("viewAll")
         return render(request, "editMovie.html", {
             'form': form
+            ,'id':id
         })
 @login_required(login_url='/auth/login/')
 def delete(request,id):

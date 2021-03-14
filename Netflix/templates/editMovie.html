@@ -5,7 +5,7 @@
     <title>Edit Movie</title>
 </head>
 <body>
-<form action="{% url "addMovie" %}" method="post" enctype="multipart/form-data">
+<form action="{% url "editMovie"  id%}" method="post" enctype="multipart/form-data">
                {% csrf_token %}
     {{  form.as_p  }}
 <button type="submit">Edit Movie</button>
