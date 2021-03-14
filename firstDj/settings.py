@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.contrib.auth import login
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -31,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
     'Netflix',
     'tasks',
     'Home',
@@ -53,6 +57,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'firstDj.urls'
+LOGIN_REDIRECT_URL = '/Netflix/'
+LOGOUT_REDIRECT_URL = '/auth/login/'
+
 
 TEMPLATES = [
     {
@@ -120,7 +127,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

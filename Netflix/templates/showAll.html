@@ -6,7 +6,12 @@
 </head>
 <body>
 <center><h1>Movies List</h1></center>
+   {% if perms.Netflix.Can_add_movies %}
 <center><a role="button" href="{% url "addMovie" %}">add movie</a></center>
+{% endif %}
+{% if user.is_authenticated %}
+ <center><a role="button" href="{% url "logout" %}" style="background-color: brown;color: white">logout</a></center>
+{% endif %}
 <div >
     {% for movie in movies %}
         <div style="border:1px solid brown;display: inline-block;padding: 16px;margin-bottom: 8px">
@@ -20,8 +25,10 @@
         <img src="{{ movie.poster.url }}" height="200px" width="250px">
         <video controls  src="{{ request.scheme }}://{{ request.get_host }}{{ movie.video.url }}"width="250" height="200px"></video>
         <br><div style="float: right">
+            {% if perms.Netflix.Can_delete_movies %}
     <a href="{% url "deleteMovie" movie.id %}" style="background-color: red">Delete</a>
     <a href="{% url "editMovie" movie.id  %}" style="margin-left: 8px;background-color: chartreuse">update</a>
+            {% endif %}
 </div>
     </div><br>{% empty %}
         <h3>Empty list</h3>
