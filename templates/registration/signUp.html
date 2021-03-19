@@ -5,9 +5,10 @@
     <title>login</title>
 </head>
 <body>
+{% load crispy_forms_tags %}
 <form action="{% url "signUp" %}" method="post">
     {% csrf_token %}
-     {{  form.as_p  }}
+     {{ form|crispy }}
     <button type="submit">Register</button><a style="margin-left: 8px" href="{% url 'login' %}">Already have an account</a>
 </form>
 </body>

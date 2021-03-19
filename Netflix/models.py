@@ -15,3 +15,6 @@ class Movies(models.Model):
     categories =models.ManyToManyField(Categories)
     def __str__(self):
         return self.title
+class ApiTest(models.Model):
+    name=models.CharField(max_length=50)
+    age = models.IntegerField

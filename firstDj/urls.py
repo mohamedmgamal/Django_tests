@@ -23,6 +23,7 @@ urlpatterns = [
     path('Home/', include('Home.urls')),
     path('tasks/', include('tasks.urls')),
     path('Netflix/', include('Netflix.urls')),
+    path('Netflix/Api/', include('Netflix.API.urls')),
 ]
 from django.conf import settings
 from django.conf.urls.static import static

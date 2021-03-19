@@ -6,4 +6,5 @@ in this project i submitted my 3 labs :
 
 **third lab under /Netflix URL  
 
+**Api lab is implemented under  /Netflix/Api
 and admin panel have changed . 
